@@ -17,4 +17,6 @@ A simple Streamlit app template for you to modify!
    ```
    $ streamlit run streamlit_app.py
    ```
-pip install --upgrade streamlit
+$ pip install --upgrade streamlit
+$ pip install -r requirements.txt
+
