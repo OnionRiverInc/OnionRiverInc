@@ -104,4 +104,12 @@ dscr = (noi * 12) / annual_debt_service if annual_debt_service else 0
 coc_return = ((noi * 12 - annual_debt_service) / (purchase_price - loan_amount)) * 100 if loan_amount else 0
 
 st.write(f"**DSCR:** {dscr:.2f}")
-st.write(f"**Cash-on-Cash Return:** {coc_return:.2f}%")
+st.write(f"**Cash-on-Cash Return:** {coc_return:.2f}%")'
+import pandas as pd
+forecast_df = pd.DataFrame({"Year": list(range(years + 1)), "Projected Rent": forecast})
+st.line_chart(forecast_df.set_index("Year"))
+
+import pandas as pd
+forecast_df = pd.DataFrame({"Year": list(range(years + 1)), "Projected Rent": forecast})
+st.line_chart(forecast_df.set_index("Year"))
+'
