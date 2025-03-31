@@ -97,3 +97,11 @@ elif page == "📋 About":
 
     This platform is your AI-powered assistant to help with deal analysis, market intelligence, and investor/lender engagement.
     """)
+loan_amount = st.number_input("Loan Amount ($)", 0, purchase_price, int(purchase_price * 0.75))
+annual_debt_service = st.number_input("Annual Debt Service ($)", 0, 500000, 60000)
+
+dscr = (noi * 12) / annual_debt_service if annual_debt_service else 0
+coc_return = ((noi * 12 - annual_debt_service) / (purchase_price - loan_amount)) * 100 if loan_amount else 0
+
+st.write(f"**DSCR:** {dscr:.2f}")
+st.write(f"**Cash-on-Cash Return:** {coc_return:.2f}%")
